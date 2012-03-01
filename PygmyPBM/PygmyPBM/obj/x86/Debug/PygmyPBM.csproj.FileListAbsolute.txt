@@ -1,0 +1,20 @@
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.exe
+C:\Users\MightyDubster\AppData\Local\Temporary Projects\WindowsFormsApplication1\obj\x86\Debug\WindowsFormsApplication1.pdb
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\bin\Debug\PygmyPBM.exe
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\bin\Debug\PygmyPBM.pdb
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\PygmyPBM.exe
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\PygmyPBM.pdb
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.FormNewImage.resources
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.FormRawData.resources
