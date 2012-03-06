@@ -85,6 +85,7 @@
             this.comboBoxImageType.Name = "comboBoxImageType";
             this.comboBoxImageType.Size = new System.Drawing.Size(119, 21);
             this.comboBoxImageType.TabIndex = 4;
+            this.comboBoxImageType.SelectedIndexChanged += new System.EventHandler(this.comboBoxImageType_SelectedIndexChanged);
             // 
             // buttonOK
             // 

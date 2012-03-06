@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,9 +47,12 @@
             this.toolStripZoom400 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripZoom800 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripZoom1600 = new System.Windows.Forms.ToolStripMenuItem();
+            this.rawDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelText = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabelImageType = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,10 +61,11 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonNewLine = new System.Windows.Forms.Button();
+            this.buttonNewPoly = new System.Windows.Forms.Button();
             this.buttonColor = new System.Windows.Forms.Button();
-            this.toolStripStatusLabelText = new System.Windows.Forms.ToolStripStatusLabel();
             this.comboBoxBPP = new System.Windows.Forms.ComboBox();
-            this.rawDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelImageType = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,6 +113,7 @@
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsStripMenuItem1
             // 
@@ -154,7 +160,7 @@
             this.toolStripZoom800,
             this.toolStripZoom1600});
             this.zoomToolStripMenuItem.Name = "zoomToolStripMenuItem";
-            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            this.zoomToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.zoomToolStripMenuItem.Text = "Zoom";
             // 
             // toolStripZoom100
@@ -199,12 +205,20 @@
             this.toolStripZoom1600.Text = "1600%";
             this.toolStripZoom1600.Click += new System.EventHandler(this.toolStripZoom1600_Click);
             // 
+            // rawDataToolStripMenuItem
+            // 
+            this.rawDataToolStripMenuItem.Name = "rawDataToolStripMenuItem";
+            this.rawDataToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.rawDataToolStripMenuItem.Text = "Raw Data";
+            this.rawDataToolStripMenuItem.Click += new System.EventHandler(this.rawDataToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.toolStripStatusLabel2,
-            this.toolStripStatusLabelText});
+            this.toolStripStatusLabelText,
+            this.toolStripStatusLabelImageType});
             this.statusStrip1.Location = new System.Drawing.Point(0, 317);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(586, 22);
@@ -223,6 +237,18 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
             this.toolStripStatusLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // toolStripStatusLabelText
+            // 
+            this.toolStripStatusLabelText.Name = "toolStripStatusLabelText";
+            this.toolStripStatusLabelText.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabelImageType
+            // 
+            this.toolStripStatusLabelImageType.Name = "toolStripStatusLabelImageType";
+            this.toolStripStatusLabelImageType.Size = new System.Drawing.Size(66, 17);
+            this.toolStripStatusLabelImageType.Text = "ImageType";
+            this.toolStripStatusLabelImageType.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -235,7 +261,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.Location = new System.Drawing.Point(0, 75);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(136, 80);
+            this.treeView1.Size = new System.Drawing.Size(136, 58);
             this.treeView1.TabIndex = 3;
             // 
             // pictureBox1
@@ -265,6 +291,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(444, 293);
             this.panel1.TabIndex = 5;
+            this.panel1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseClick);
             // 
             // comboBoxFrames
             // 
@@ -281,25 +308,41 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.buttonNewLine);
+            this.panel2.Controls.Add(this.buttonNewPoly);
             this.panel2.Controls.Add(this.buttonColor);
             this.panel2.Location = new System.Drawing.Point(3, 161);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(133, 156);
             this.panel2.TabIndex = 7;
             // 
+            // buttonNewLine
+            // 
+            this.buttonNewLine.Image = ((System.Drawing.Image)(resources.GetObject("buttonNewLine.Image")));
+            this.buttonNewLine.Location = new System.Drawing.Point(80, 0);
+            this.buttonNewLine.Name = "buttonNewLine";
+            this.buttonNewLine.Size = new System.Drawing.Size(40, 40);
+            this.buttonNewLine.TabIndex = 2;
+            this.buttonNewLine.UseVisualStyleBackColor = true;
+            // 
+            // buttonNewPoly
+            // 
+            this.buttonNewPoly.Image = ((System.Drawing.Image)(resources.GetObject("buttonNewPoly.Image")));
+            this.buttonNewPoly.Location = new System.Drawing.Point(40, 0);
+            this.buttonNewPoly.Name = "buttonNewPoly";
+            this.buttonNewPoly.Size = new System.Drawing.Size(40, 40);
+            this.buttonNewPoly.TabIndex = 1;
+            this.buttonNewPoly.UseVisualStyleBackColor = true;
+            this.buttonNewPoly.Click += new System.EventHandler(this.buttonNewPoly_Click);
+            // 
             // buttonColor
             // 
             this.buttonColor.Location = new System.Drawing.Point(0, 0);
             this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(28, 28);
+            this.buttonColor.Size = new System.Drawing.Size(40, 40);
             this.buttonColor.TabIndex = 0;
             this.buttonColor.UseVisualStyleBackColor = true;
             this.buttonColor.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // toolStripStatusLabelText
-            // 
-            this.toolStripStatusLabelText.Name = "toolStripStatusLabelText";
-            this.toolStripStatusLabelText.Size = new System.Drawing.Size(0, 17);
             // 
             // comboBoxBPP
             // 
@@ -317,18 +360,21 @@
             this.comboBoxBPP.TabIndex = 8;
             this.comboBoxBPP.SelectedIndexChanged += new System.EventHandler(this.comboBoxBPP_SelectedIndexChanged);
             // 
-            // rawDataToolStripMenuItem
+            // labelImageType
             // 
-            this.rawDataToolStripMenuItem.Name = "rawDataToolStripMenuItem";
-            this.rawDataToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.rawDataToolStripMenuItem.Text = "Raw Data";
-            this.rawDataToolStripMenuItem.Click += new System.EventHandler(this.rawDataToolStripMenuItem_Click);
+            this.labelImageType.AutoSize = true;
+            this.labelImageType.Location = new System.Drawing.Point(2, 139);
+            this.labelImageType.Name = "labelImageType";
+            this.labelImageType.Size = new System.Drawing.Size(60, 13);
+            this.labelImageType.TabIndex = 9;
+            this.labelImageType.Text = "ImageType";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 339);
+            this.Controls.Add(this.labelImageType);
             this.Controls.Add(this.comboBoxBPP);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.comboBoxFrames);
@@ -338,7 +384,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Pygmy Image Editor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.Resize += new System.EventHandler(this.Form1_Resize);
@@ -389,6 +435,10 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelText;
         private System.Windows.Forms.ComboBox comboBoxBPP;
         private System.Windows.Forms.ToolStripMenuItem rawDataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelImageType;
+        private System.Windows.Forms.Label labelImageType;
+        private System.Windows.Forms.Button buttonNewPoly;
+        private System.Windows.Forms.Button buttonNewLine;
 
     }
 }

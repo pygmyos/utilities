@@ -61,7 +61,8 @@ namespace WindowsFormsApplication1
             {
                 ImageFrame = 0;
             }
-            ImageType = comboBoxImageType.SelectedText;
+            ImageType = comboBoxImageType.Items[comboBoxImageType.SelectedIndex].ToString();
+            //ImageType = comboBoxImageType.Items[ comboBoxImageType.SelectedIndex ].ToString();
             
         }
 
@@ -69,5 +70,11 @@ namespace WindowsFormsApplication1
         {
             //this.Visible = false;
         }
+
+        private void comboBoxImageType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

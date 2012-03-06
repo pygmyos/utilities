@@ -18,3 +18,4 @@ C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\o
 C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
 C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.FormNewImage.resources
 C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.FormRawData.resources
+C:\Users\MightyDubster\documents\visual studio 2010\Projects\PygmyPBM\PygmyPBM\obj\x86\Debug\WindowsFormsApplication1.FormToolTipMenu.resources
