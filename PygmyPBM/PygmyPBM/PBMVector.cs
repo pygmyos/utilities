@@ -10,12 +10,13 @@ namespace WindowsFormsApplication1
     class PBMVector
     {
         PBMVectorData[] vectorData;
+        Bitmap ImageBitmap;
         public int Length;
-        int ImageWidth, ImageHeight, SelectedIndex;
+        int ImageWidth, ImageHeight;
+        int SelectedIndex;
 
         public PBMVector()
         {
-            //vectorData = new PBMVectorData[1];
             Length = 0;
             SelectedIndex = 0;
             AddPoly();
@@ -248,15 +249,26 @@ namespace WindowsFormsApplication1
             vectorData[SelectedIndex].InsertVerticeAfter(x, y, xSeek, ySeek);
         }
 
-        public Bitmap Draw(int ImageWidth, int ImageHeight, int Zoom)
+        public Bitmap Draw(int Zoom)
         {
-            //int Zoom = GetZoom();
+            if (ImageWidth < 1 || ImageWidth > 65535) 
+            {
+                ImageWidth = 1;
+            }
+            if(ImageHeight < 1 || ImageHeight > 65535)
+            {
+                ImageHeight = 1;
+            }
+            if(Zoom < 1 || Zoom > 32)
+            {
+                Zoom = 1;
+            }
             System.Drawing.Pen myPen;
             myPen = new System.Drawing.Pen(System.Drawing.Color.Black);
             System.Drawing.SolidBrush myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
 
             Rectangle rect = new Rectangle();
-            Bitmap ImageBitmap;
+            //new Bitmap(
             ImageBitmap = new Bitmap(ImageWidth * Zoom, ImageHeight * Zoom, System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             System.Drawing.Graphics formGraphics = Graphics.FromImage(ImageBitmap);
 
@@ -347,6 +359,7 @@ namespace WindowsFormsApplication1
 
             return (ImageBitmap);
         }
+
         public void Export(string FileName)//, int ImageWidth, int ImageHeight)
         {
             int PygmyHeader;
@@ -358,7 +371,7 @@ namespace WindowsFormsApplication1
 
             PygmyHeader = PygmyPBMHeader.PYGMY_PBM_VECTOR;
             PygmyHeader |= PygmyPBMHeader.PYGMY_PBM_24BPP;
-            if (ImageWidth < 255 || ImageHeight < 255)
+            if (ImageWidth > 255 || ImageHeight > 255)
             {
                 PygmyHeader |= PygmyPBMHeader.PYGMY_PBM_16BITD;
                 Dim16Bit = true;

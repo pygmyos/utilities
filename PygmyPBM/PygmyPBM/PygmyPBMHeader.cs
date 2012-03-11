@@ -61,6 +61,7 @@ namespace WindowsFormsApplication1
         public const int PYGMY_VECTOR_SPLINE = 0x80;
         public const int PYGMY_VECTOR_TEXT = 0xA0;
         public const int PYGMY_VECTOR_RASTER = 0xC0;
+        public const int PYGMY_VECTOR_FONT = 0xE0;
 
         public int ConvertBPP(int BPP)
         {

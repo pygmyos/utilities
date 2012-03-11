@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PBMRaster.cs" />
     <Compile Include="PygmyPBMHeader.cs" />
     <Compile Include="PBMVector.cs" />
     <Compile Include="Form4.cs">

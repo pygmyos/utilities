@@ -65,7 +65,7 @@
             this.buttonNewPoly = new System.Windows.Forms.Button();
             this.buttonColor = new System.Windows.Forms.Button();
             this.comboBoxBPP = new System.Windows.Forms.ComboBox();
-            this.labelImageType = new System.Windows.Forms.Label();
+            this.panelFrames = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,41 +104,41 @@
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.newToolStripMenuItem.Text = "New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.newToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsStripMenuItem1
             // 
             this.saveAsStripMenuItem1.Name = "saveAsStripMenuItem1";
-            this.saveAsStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.saveAsStripMenuItem1.Size = new System.Drawing.Size(114, 22);
             this.saveAsStripMenuItem1.Text = "Save As";
             this.saveAsStripMenuItem1.Click += new System.EventHandler(this.saveAsStripMenuItem1_Click);
             // 
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.closeToolStripMenuItem.Text = "Close";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // viewToolStripMenuItem
@@ -219,7 +219,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabelText,
             this.toolStripStatusLabelImageType});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 317);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 411);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(586, 22);
             this.statusStrip1.TabIndex = 1;
@@ -261,7 +261,7 @@
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.Location = new System.Drawing.Point(0, 75);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(136, 58);
+            this.treeView1.Size = new System.Drawing.Size(136, 87);
             this.treeView1.TabIndex = 3;
             // 
             // pictureBox1
@@ -311,9 +311,9 @@
             this.panel2.Controls.Add(this.buttonNewLine);
             this.panel2.Controls.Add(this.buttonNewPoly);
             this.panel2.Controls.Add(this.buttonColor);
-            this.panel2.Location = new System.Drawing.Point(3, 161);
+            this.panel2.Location = new System.Drawing.Point(3, 168);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(133, 156);
+            this.panel2.Size = new System.Drawing.Size(133, 240);
             this.panel2.TabIndex = 7;
             // 
             // buttonNewLine
@@ -360,21 +360,26 @@
             this.comboBoxBPP.TabIndex = 8;
             this.comboBoxBPP.SelectedIndexChanged += new System.EventHandler(this.comboBoxBPP_SelectedIndexChanged);
             // 
-            // labelImageType
+            // panelFrames
             // 
-            this.labelImageType.AutoSize = true;
-            this.labelImageType.Location = new System.Drawing.Point(2, 139);
-            this.labelImageType.Name = "labelImageType";
-            this.labelImageType.Size = new System.Drawing.Size(60, 13);
-            this.labelImageType.TabIndex = 9;
-            this.labelImageType.Text = "ImageType";
+            this.panelFrames.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFrames.AutoScroll = true;
+            this.panelFrames.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFrames.Location = new System.Drawing.Point(142, 323);
+            this.panelFrames.Name = "panelFrames";
+            this.panelFrames.Size = new System.Drawing.Size(444, 88);
+            this.panelFrames.TabIndex = 10;
+            this.panelFrames.WrapContents = false;
+            this.panelFrames.DoubleClick += new System.EventHandler(this.panelFrames_DoubleClick);
+            this.panelFrames.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelFrames_MouseDoubleClick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 339);
-            this.Controls.Add(this.labelImageType);
+            this.ClientSize = new System.Drawing.Size(586, 433);
+            this.Controls.Add(this.panelFrames);
             this.Controls.Add(this.comboBoxBPP);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.comboBoxFrames);
@@ -436,9 +441,9 @@
         private System.Windows.Forms.ComboBox comboBoxBPP;
         private System.Windows.Forms.ToolStripMenuItem rawDataToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelImageType;
-        private System.Windows.Forms.Label labelImageType;
         private System.Windows.Forms.Button buttonNewPoly;
         private System.Windows.Forms.Button buttonNewLine;
+        private System.Windows.Forms.FlowLayoutPanel panelFrames;
 
     }
 }
